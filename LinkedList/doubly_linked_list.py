@@ -62,6 +62,14 @@ class DoublyLinkedList:
             current = current.next
         nodes += str(current.data) + "->Null"
         return nodes
+    
+    def print_nodes_reverse(self):
+        current = self.head
+        while current.next:
+            current = current.next
+        while current:
+            print(current.data)
+            current = current.previous
 
 
 if __name__ == "__main__":
@@ -73,3 +81,7 @@ if __name__ == "__main__":
     print(my_ll)
     my_ll.delete_i(2)
     print(my_ll)
+    my_ll.insert_end(Node(34))
+    my_ll.insert_end(Node(26))
+    my_ll.insert_end(Node(8))
+    print(my_ll.print_nodes_reverse())

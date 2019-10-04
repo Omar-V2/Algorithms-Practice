@@ -77,22 +77,27 @@ class LinkedList:
             print(head.data)
         
     def recursive_reverse(self, head):
-        if head:
-            previous = head
-            next_node = head.next
-            self.recursive_reverse(head.next)
+        if not head.next: # reached end of the original, unreversed linked list
+            self.head = head
+            return
+        self.recursive_reverse(head.next)
+        next_node = head.next
+        next_node.next = head
+        head.next = None
 
 
 if __name__ == "__main__":
     pass    
-    # head = Node(5)
-    # my_ll = LinkedList(head)
-    # my_ll.insert_end(Node(4))
-    # my_ll.insert_i(Node(3), 1)
+    head = Node(5)
+    my_ll = LinkedList(head)
+    my_ll.insert_end(Node(4))
+    my_ll.insert_i(Node(3), 1)
+    print(my_ll)
+    # my_ll.recursive_reverse(head)
     # print(my_ll)
     # my_ll.recursive_print(head)
-    # my_ll.delete_i(0)
-    # print(my_ll)
+    my_ll.delete_i(2)
+    print(my_ll)
     # my_ll.insert_i(Node(7), 0)
     # print(my_ll)
     # my_ll.reverse()

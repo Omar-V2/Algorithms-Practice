@@ -1,7 +1,7 @@
 class CircularQueue:
     def __init__(self, capacity):
         self.capacity = capacity
-        self.items = [None]*self.capacity
+        self.items = [None] * self.capacity
         self.front = -1
         self.rear = -1
     

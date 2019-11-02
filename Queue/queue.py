@@ -3,7 +3,7 @@ class Queue:
         self.front = -1
         self.rear = -1
         self.capacity = capacity
-        self.items = [None]*self.capacity
+        self.items = [None] * self.capacity
     
     def __repr__(self):
         current_items = self.items[self.front:self.rear+1]
